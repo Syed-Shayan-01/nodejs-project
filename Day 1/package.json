@@ -4,7 +4,7 @@
   "description": "My node js APp",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon Day 1 app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
