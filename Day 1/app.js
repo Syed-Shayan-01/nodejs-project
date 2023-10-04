@@ -30,7 +30,7 @@ const server = http.createServer((req, res) => {
             });
         });
     } else {
-        res.setHeader('Content-Type', 'text/html')
+        res.setHeader('Content-Type', 'text/html');
         res.write('404 - Error Page Not Found' + "\n" + "<a href='/'>Home Page</a>");
         res.end();
     }
