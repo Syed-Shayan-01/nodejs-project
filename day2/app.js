@@ -8,9 +8,10 @@ const path = require('path')
 app.use(express.static(path.join(process.cwd(), 'public'))) //define static content to allow to render in server
 
 app.use(bodyParser.urlencoded({ extended: false }))
+//  create Middlewear
 app.use((req, res, next) => {    // Call next method
     req.data = 'Syed Shayan'
-    next();
+    next();   // call next Why? To Move the next deparment means next function
 })
 // app.use((req, res, next) => {    // Create middle Were in express js
 //     // res.send(req.url);
