@@ -6,6 +6,7 @@ const path = require('path')
 
 
 app.use(express.static(path.join(process.cwd(), 'public'))) //define static content to allow to render in server
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use((req, res, next) => {    // Call next method
     req.data = 'Syed Shayan'
