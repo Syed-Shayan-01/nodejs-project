@@ -15,4 +15,8 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 
+app.get("/:username", (req, res) => {
+    const userid = req.params.username;
+    res.render("index", { username: userid });
+});
 app.listen(3000);
