@@ -15,8 +15,8 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 
-app.get("/:username", (req, res) => {
+app.get("/profile/:username", (req, res) => {
     const userid = req.params.username;
-    res.render("index", { username: userid });
+    res.render("profile", { username: userid });
 });
 app.listen(3000);
