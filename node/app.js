@@ -1,15 +1,10 @@
 const express = require('express');
 const app = express();
-app.set("view engine", "ejs");
+app.set("view engine", "ejs");  // configure use view engine in ejs
 
 app.get("/", (req, res) => {
     res.render("index");
 });
-
-app.get("/", (req, res) => {
-    res.render("index");
-});
-
 
 app.get("/contact", (req, res) => {
     res.render("contact");
