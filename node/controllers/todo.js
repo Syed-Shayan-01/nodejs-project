@@ -1,25 +1,27 @@
 const todos = [];
 
-const addTodo = (name, money) => {
-    todos.push({ name, done: false })
-}
+const addTodo = (name) => {
+    todos.push({name, done: false});
+    return true;
+};
 
-const deleteTodo = () =>{
+const deleteTodo = (index) => {
     todos.splice(index, 1);
     return true;
+};
+
+const markAsDone = (index) => {
+    todos[index].done = true;
+    return true;
+};
+
+const getAllTodos = () => {
+    return todos;
 }
-
-const markAsRead = () => {
-     todos[index].done = true; 
-     return true;
-}
-
-
-const getAllTodos = () =>{
-    return todos;   
-}
-
 
 module.exports = {
-    addTodo, deleteTodo, markAsRead, getAllTodos,
+    addTodo,
+    getAllTodos,
+    markAsDone,
+    deleteTodo
 }
