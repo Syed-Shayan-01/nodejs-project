@@ -21,3 +21,11 @@ const filePath = `${dirPath}/new.txt`
 // fs.unlinkSync(filePath);   // delete  file from fs
 
 
+let a = 10;
+let b = 2;
+
+b = 20;
+
+console.log(a + b)
+
+// Console a + b a is 30 and b is 20
