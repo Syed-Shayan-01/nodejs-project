@@ -4,7 +4,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path')
 const dirPath = path.join(process.cwd(), "crud");
-const filePath = `${dirPath}/new.txt`
+const filePath = `${dirPath}/now.txt`
 // fs.mkdir(dirPath, () => {                         // create folder function
 
 // }); 
