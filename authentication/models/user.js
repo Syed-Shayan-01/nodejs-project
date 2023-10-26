@@ -34,7 +34,7 @@ exports.createUser = async (userName, email, password, id) => {
         if (userCheck) {
             throw new Error('USER ALREADY SIGNUP');   // add authorization kya user is already sign up
         } else {
-
+            const id = Date.now();
             await writeData([...data, { userName, email, password, id }]);
             return "User Succesfully Created";
         }
