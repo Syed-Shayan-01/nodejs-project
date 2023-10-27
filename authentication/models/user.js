@@ -27,14 +27,14 @@ const writeData = (data) => {
     })
 }
 
-exports.createUser = async (userName, email, password, id) => {
+exports.createUser = async (userName, email, password) => {
     try {
         const data = await readData();
         const userCheck = data.find(user => user.email === email);
         if (userCheck) {
             throw new Error('USER ALREADY SIGNUP');   // add authorization kya user is already sign up
         } else {
-            const id = Date.now();
+            const id = data.length + 1;
             await writeData([...data, { userName, email, password, id }]);
             return "User Succesfully Created";
         }

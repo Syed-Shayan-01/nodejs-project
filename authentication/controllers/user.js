@@ -2,8 +2,7 @@ const { createUser } = require("../models/user")
 
 exports.createUser = async (userName, email, password) => {
     try {
-        const id = Date.now();
-        await createUser(userName, email, password, id)
+        await createUser(userName, email, password)
     } catch (err) {
         throw err;
     }
