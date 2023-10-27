@@ -7,3 +7,4 @@ exports.createUser = async (userName, email, password) => {
         throw err;
     }
 }
+

@@ -1,6 +1,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcrypt');
 const filePath = path.join(process.cwd(), "data", "auth.json");
 
 const readData = () => {
@@ -34,11 +35,18 @@ exports.createUser = async (userName, email, password) => {
         if (userCheck) {
             throw new Error('USER ALREADY SIGNUP');   // add authorization kya user is already sign up
         } else {
+            const hashPass = await bcrypt.hash(password, 12);     // Password encryption Method use bcrypt js
             const id = data.length + 1;
-            await writeData([...data, { userName, email, password, id }]);
+            await writeData([...data, { userName, email, password: hashPass, id }]);
             return "User Succesfully Created";
         }
     } catch (err) {
         throw err;
     }
+}
+
+
+
+exports.findUser = async () => {
+
 }
