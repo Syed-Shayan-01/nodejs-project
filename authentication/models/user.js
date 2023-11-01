@@ -53,21 +53,3 @@ exports.findUser = async (email) => {
         throw err;
     }
 }
-
-
-
-
-// const mongoose = require('mongoose')
-// const { Schema } = mongoose;
-
-// const authSchema = new Schema({
-//     username: String,
-//     email: { type: String, required: true, unique: true },
-//     password: { type: String, select: false }
-// });
-
-
-// const Auth = mongoose.model('auth', authSchema);
-
-
-// module.exports = Auth;
