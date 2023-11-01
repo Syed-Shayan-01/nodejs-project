@@ -1,16 +1,17 @@
 const { createUser, findUser } = require("../models/user")
+const Auth = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const secrect_key = require("../data/key");
-exports.createUser = async (userName, email, password) => {
-    try {
-        const hashPass = await bcrypt.hash(password, 12);     // Password encryption Method use bcrypt js
-        const id = Date.now();
-        await createUser(userName, email, hashPass, id)
-    } catch (err) {
-        throw err;
-    }
-}
+// exports.createUser = async (userName, email, password) => {
+//     try {
+//         const hashPass = await bcrypt.hash(password, 12);     // Password encryption Method use bcrypt js
+//         const id = Date.now();
+//         await createUser(userName, email, hashPass, id)
+//     } catch (err) {
+//         throw err;
+//     }
+// }
 
 exports.login = async (email, password) => {
     try {

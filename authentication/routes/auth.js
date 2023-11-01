@@ -1,5 +1,5 @@
 const express = require('express');
-const { createUser, login } = require('../controllers/user');
+const { createUser, login, getAuth } = require('../controllers/user');
 const Auth = require('../models/db/auth');
 const bcrypt = require('bcrypt');
 
@@ -17,9 +17,10 @@ router.post("/signup", async (req, res) => {
         const hashPass = await bcrypt.hash(req.body.password, 12);
 
         const allProduct = new Auth({ name: req.body.name, email: req.body.email, password: hashPass })
-        const allRes = await allProduct.save();
-        const response = await createUser(allRes)
-        res.status(200).send(response)
+        await allProduct.save();
+        // const response = await createUser(req.body.name, req.body.email, req.body.password)
+        // const response = await getAuth()
+        res.status(200).send("Saved")
     } catch (err) {
         res.send(err)
     }
